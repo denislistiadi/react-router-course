@@ -52,11 +52,11 @@ li {
   min-width: 280px;
   margin: 0 auto;
   padding: 20px;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 .large-header {
-  font-size: 105px;
+  font-size: 90px;
   text-align: center;
   font-weight: 900;
 }
