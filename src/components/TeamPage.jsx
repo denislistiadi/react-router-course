@@ -5,6 +5,7 @@ import useTeamArticles from '../hooks/useTeamsArticles'
 import useTeam from '../hooks/useTeam'
 import TeamLogo from './TeamLogo'
 import { slugify } from '../utils'
+import Loading from './Loading'
 
 function useTeamPageData (teamId) {
   const { loading: loadingTeamNames, response: teamNames } = useTeamNames()
@@ -20,7 +21,7 @@ function TeamPage() {
     const { teamNames, teamArticles, team, loading } = useTeamPageData(teamId)
 
     if (loading === true) {
-      return <p>Loading</p>
+      return <Loading />
     }
 
     if (!teamNames.includes(teamId)) {
