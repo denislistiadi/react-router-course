@@ -1,13 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
 import Navbar from "./Navbar";
-import Players from "./Players";
-import TeamPage from "./TeamPage";
-import Teams from "./Teams";
-import Player from "./Player";
-import Team from "./Team";
-import Articles from "./Articles";
-import Article from "./Article";
+import Loading from "./Loading";
+const Home = React.lazy(() => import ("./Home"));
+const Players = React.lazy(() => import ("./Players"));
+const TeamPage = React.lazy(() => import ("./TeamPage"));
+const Teams = React.lazy(() => import ("./Teams"));
+const Player = React.lazy(() => import ("./Player"));
+const Team = React.lazy(() => import ("./Team"));
+const Articles = React.lazy(() => import ("./Articles"));
+const Article = React.lazy(() => import ("./Article"));
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <div>
         <Navbar />
 
+        <React.Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/players" element={<Players />}>
@@ -40,6 +42,7 @@ export default function App() {
             <Route path=":articleId" element={<Article />} />
           </Route>
         </Routes>
+        </React.Suspense>
       </div>
     </BrowserRouter>
   );
