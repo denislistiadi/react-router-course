@@ -19,9 +19,9 @@ export default function Team() {
                 <TeamLogo id={team.id} className='center' />
                 <h1 className="medium-header">{team.name}</h1>
                 <ul className="info-list row">
-                    <li>Est.<div>{}team.established</div></li>
-                    <li>Manager<div>{}team.manager</div></li>
-                    <li>Coach<div>{}team.coach</div></li>
+                    <li>Est.<div>{team.established}</div></li>
+                    <li>Manager<div>{team.manager}</div></li>
+                    <li>Coach<div>{team.coach}</div></li>
                 </ul>
                 <Link
                     to={`/${teamId}`}
